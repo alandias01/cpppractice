@@ -146,17 +146,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\polymorphism.h" />
     <ClCompile Include="..\src\filedir.cpp" />
     <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\basics01.h" />
+    <ClInclude Include="..\src\basics02.h" />
     <ClInclude Include="..\src\filedir.h" />
     <ClInclude Include="..\src\lambdas.h" />
     <ClInclude Include="..\src\pointers\person.h" />
     <ClInclude Include="..\src\pointers\PersonBasic.h" />
     <ClInclude Include="..\src\pointers\PointersAndRef.h" />
     <ClInclude Include="..\src\pointers\resource.h" />
+    <ClInclude Include="..\src\simple.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

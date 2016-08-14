@@ -4,15 +4,10 @@
 #include<vector>
 #include<list>
 #include<algorithm>
+#include "simple.h"
 
 using namespace std;
 
-class simple
-{ 
-public:
-	simple() {	}
-	int a;
-};
 
 /* NOTES
 
@@ -20,35 +15,47 @@ constexpr
 */
 
 
-class basics01
+
+
+
+class basics02
 {
 public:
-	basics01();
-	~basics01();
+	basics02();
+	~basics02();
 
 	void arrays01();
-	void iterateThroughAColllection();
+
+	void templates();
+	template<class T>
+	void templates01(T v);
+
+	template<class U>
+	void templates02(U& args);
+		
+	void iterateThroughACollection01();
+	void iterateThroughACollection02();
 	void rangeBasedFor();
 	void rangeBasedFor_each();
 	void algorithms01();
+	
 
 private:
 
 };
 
-basics01::basics01()
-{
-	arrays01();
-	iterateThroughAColllection();
+basics02::basics02()
+{		
+	templates();
 	
 }
 
-basics01::~basics01()
+basics02::~basics02()
 {
 }
 
 
-void basics01::arrays01()
+void basics02::arrays01()
 {
 	int a[] = {1,2,3,4};	//c++ 11 initialization list
 	
@@ -56,25 +63,65 @@ void basics01::arrays01()
 	cout << sizeof(a) << endl;	//gives bytes occupied by array
 	cout << sizeof(a)/sizeof(a[0]) << endl; //gives num of elements
 
-
-	
-
 	//prefer vector to get count since it has built in functions
 }
 
-void basics01::iterateThroughAColllection()
+inline void basics02::templates()
+{
+	int x = 3;
+	templates01(x);
+
+	vector<simple> v = { simple(1),simple(2) };
+	templates02(v);
+}
+
+template<class T>
+void basics02::templates01(T v)
+{
+	cout << v << endl;
+}
+
+template<class U>
+void basics02::templates02(U& args)
+{
+	for (auto it : args)
+	{
+		
+	}
+}
+
+
+void basics02::iterateThroughACollection01()
 {
 	vector<int> v = {1,2,3,4,5,6,7};
 
 	for (vector<int>::iterator it = v.begin(); it != v.end(); ++it) {
 		cout << *it << endl;
 	}
+	
+}
 
+void basics02::iterateThroughACollection02()
+{
+	list<int> n = { 1,2,3,4,5 };
+
+	const list<int>::const_iterator result = find_if(n.begin(), n.end(), [](int a) { return (a % 2) == 0; });
+
+	if (result != n.end())
+	{
+		cout << "The first even number in the list is " << (*result) << "." << endl;
+	}
+
+	else
+	{
+		cout << "The list contains no even numbers." << endl;
+	}
 }
 
 
-//Banefits of range based for over for_each.. Range based for allows break and continue
-void basics01::rangeBasedFor()
+
+//Benefits of range based for over for_each.. Range based for allows break and continue
+void basics02::rangeBasedFor()
 {
 	//BAD
 	int x[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
@@ -120,12 +167,12 @@ void basics01::rangeBasedFor()
 }
 
 //Benefits of range based for_each over for. For_each allows you to pick range
-void basics01::rangeBasedFor_each()
+void basics02::rangeBasedFor_each()
 {
 
 }
 
-void basics01::algorithms01() 
+void basics02::algorithms01()
 {
 	//When iterating, use non member begin and end
 
@@ -133,21 +180,10 @@ void basics01::algorithms01()
 	int x = 3, y = 5;
 	auto i = find_if(begin(v), end(v), [=](int i) { return i > x && i < y; });
 
-	list<int> n = {1,2,3,4,5};
-
-	const list<int>::const_iterator result = find_if(n.begin(), n.end(), [](int a) { return (a % 2) == 0; });
-
-	if (result != n.end())
-	{
-		cout << "The first even number in the list is " << (*result) << "." << endl;
-	}
-
-	else
-	{
-		cout << "The list contains no even numbers." << endl;
-	}
+	list<int> n = {1,2,3,4,5};	
 
 	auto fi = find_if(begin(n), end(n), [](int a) { return (a % 2) == 0; });
 
-
 }
+
+

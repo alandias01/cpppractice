@@ -2,7 +2,9 @@
 #include "filedir.h"
 #include "pointers\PointersAndRef.h"
 #include "lambdas.h"
-#include "basics01.h"
+
+#include "basics02.h"
+#include "polymorphism.h"
 
 int main(int argc, TCHAR *argv[])
 {
@@ -10,7 +12,7 @@ int main(int argc, TCHAR *argv[])
 	//filedir fd;	fd.showFilesInDir();
 
 	//lambdas lam;
-	basics01 b01;
+	polym pm;
 	
 	
 
