@@ -2,16 +2,23 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<list>
 #include<algorithm>
 
 using namespace std;
 
 class simple
-{
+{ 
 public:
 	simple() {	}
 	int a;
 };
+
+/* NOTES
+
+constexpr
+*/
+
 
 class basics01
 {
@@ -19,6 +26,7 @@ public:
 	basics01();
 	~basics01();
 
+	void arrays01();
 	void iterateThroughAColllection();
 	void rangeBasedFor();
 	void rangeBasedFor_each();
@@ -30,6 +38,7 @@ private:
 
 basics01::basics01()
 {
+	arrays01();
 	iterateThroughAColllection();
 	
 }
@@ -38,6 +47,20 @@ basics01::~basics01()
 {
 }
 
+
+void basics01::arrays01()
+{
+	int a[] = {1,2,3,4};	//c++ 11 initialization list
+	
+	//Below doesn't work if you pass to a function, then ayou will get size of the pointer
+	cout << sizeof(a) << endl;	//gives bytes occupied by array
+	cout << sizeof(a)/sizeof(a[0]) << endl; //gives num of elements
+
+
+	
+
+	//prefer vector to get count since it has built in functions
+}
 
 void basics01::iterateThroughAColllection()
 {
@@ -104,11 +127,27 @@ void basics01::rangeBasedFor_each()
 
 void basics01::algorithms01() 
 {
-	//When itaerating, use non member begin and end
+	//When iterating, use non member begin and end
 
 	vector<int> v = { 1,2,3,4,5,6,7 };
 	int x = 3, y = 5;
 	auto i = find_if(begin(v), end(v), [=](int i) { return i > x && i < y; });
+
+	list<int> n = {1,2,3,4,5};
+
+	const list<int>::const_iterator result = find_if(n.begin(), n.end(), [](int a) { return (a % 2) == 0; });
+
+	if (result != n.end())
+	{
+		cout << "The first even number in the list is " << (*result) << "." << endl;
+	}
+
+	else
+	{
+		cout << "The list contains no even numbers." << endl;
+	}
+
+	auto fi = find_if(begin(n), end(n), [](int a) { return (a % 2) == 0; });
 
 
 }
