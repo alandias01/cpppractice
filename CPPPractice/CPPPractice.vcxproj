@@ -147,10 +147,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\filedir.cpp" />
-    <ClCompile Include="..\src\lambdas.cpp" />
     <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\basics01.h" />
     <ClInclude Include="..\src\filedir.h" />
     <ClInclude Include="..\src\lambdas.h" />
     <ClInclude Include="..\src\pointers\person.h" />

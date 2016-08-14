@@ -33,6 +33,13 @@ public:
 	memory location anymore.  Delete the pointer first and then set it to nullptr
 	*/
 
+	/*
+	Why use pointers with new (dynamic allocation) vs standard object creation on the stack?
+	It outlives the scope, which are the curly braces.  You may not want it to end after the function ends
+	You may easily fill the memory allocated to the stack.  Dynamic memory is on the heap 
+	*/
+
+
 	void PassingPointersAndRefs()
 	{
 		PersonBasic p1("Alan");		
@@ -151,8 +158,7 @@ public:
 		vector<shared_ptr<PersonBasic>> v1;
 		v1.push_back(p1);
 		v1.push_back(make_shared<PersonBasic>("Alan04"));
-
-		//for_each(begin(v1), end(v1), [](
+		
 	}
 
 	

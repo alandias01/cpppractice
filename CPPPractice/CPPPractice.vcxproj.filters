@@ -24,9 +24,6 @@
     <ClCompile Include="..\src\filedir.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\lambdas.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\filedir.h">
@@ -45,6 +42,9 @@
       <Filter>Header Files\pointers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\lambdas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\basics01.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
