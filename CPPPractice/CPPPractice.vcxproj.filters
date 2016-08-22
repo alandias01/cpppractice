@@ -53,5 +53,8 @@
     <ClInclude Include="..\src\simple.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\algorithms01.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

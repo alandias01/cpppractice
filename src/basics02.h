@@ -37,8 +37,7 @@ public:
 	void iterateThroughACollection02();
 	void rangeBasedFor();
 	void rangeBasedFor_each();
-	void algorithms01();
-	
+		
 
 private:
 
@@ -169,21 +168,15 @@ void basics02::rangeBasedFor()
 //Benefits of range based for_each over for. For_each allows you to pick range
 void basics02::rangeBasedFor_each()
 {
+	vector<int> v = { 1,2,3 };
+	
+	for_each(begin(v), end(v), [](int x)
+	{
+		cout << x << endl;
+	});
 
 }
 
-void basics02::algorithms01()
-{
-	//When iterating, use non member begin and end
 
-	vector<int> v = { 1,2,3,4,5,6,7 };
-	int x = 3, y = 5;
-	auto i = find_if(begin(v), end(v), [=](int i) { return i > x && i < y; });
-
-	list<int> n = {1,2,3,4,5};	
-
-	auto fi = find_if(begin(n), end(n), [](int a) { return (a % 2) == 0; });
-
-}
 
 

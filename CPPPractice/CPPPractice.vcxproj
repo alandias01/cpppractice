@@ -151,6 +151,7 @@
     <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\algorithms01.h" />
     <ClInclude Include="..\src\basics02.h" />
     <ClInclude Include="..\src\filedir.h" />
     <ClInclude Include="..\src\lambdas.h" />
